@@ -14,11 +14,11 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .container h1 {
+        .container>h1 {
             text-align: center;
         }
 
-        .container section {
+        .container>section {
             padding-bottom: 50px;
         }
 
@@ -60,6 +60,21 @@
             -webkit-backdrop-filter: blur(10px);
             width: 80px;
         }
+
+        /* CLIP-TEXT */
+        .clip-text h3 {
+            display: inline-block;
+            border: 1px solid;
+            font-size: 80px;
+            width: 300px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+
+            background: url('https://picsum.photos/seed/picsum/300/300') no-repeat;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 
@@ -73,13 +88,40 @@
             <p class="overflow-ellipsis">Esto es una prueba de texto para recortar</p>
         </section>
 
-        <section class="">
+        <section>
             <h2>backdrop-filter (experimental)</h2>
             <div class="backdrop-filter">
                 <div class="box">
                     <p>Texto con filtro</p>
                 </div>
             </div>
+        </section>
+        <section class="clip-text">
+            <h2>CLIP TEXT (no es estandar)</h2>
+            <h3>MI<br>TITULO</h3>
+        </section>
+
+        <section>
+            <h2>Fieldset, colores y meter en formularios</h2>
+            <form action="">
+                <fieldset>
+                    <legend>Información personal</legend>
+                    Nombre: <input type="text" name="nombre" id=""><br><br>
+                    Apellidos: <input type="text" name="apellidos" id="">
+                </fieldset>
+                <fieldset>
+                    <legend>Edad</legend>
+                    <input type="radio" name="edad" id="" value="10-39">10-39
+                    <input type="radio" name="edad" id="" value="40-59">40-59
+                    <input type="radio" name="edad" id="" value="60-79">60-79
+                </fieldset>
+                <fieldset>
+                    <legend>Colores</legend>
+                    Elija el color: <input type="color" name="color" id="">
+                </fieldset>
+                <p>Espacio disponible
+                <meter value="2" min="0" max="10">2 de 10</meter></p>
+            </form>
         </section>
 
     </div>
