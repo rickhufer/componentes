@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Componentes</title>
+
+    <style>
+        .container {
+            width: 1000px;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container section {
+            padding-bottom: 50px;
+        }
+
+        /* -----EMPIEZA AQUÍ LOS COMPONENTES----- */
+
+        /* overflow-ellipsis */
+        .text-overflow-ellipsis p {
+            width: 200px;
+            border: 1px solid;
+
+            /* Se necesita para el desbordamiento de texto */
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .overflow-ellipsis {
+            text-overflow: ellipsis;
+        }
+
+        /* backdrop-filter */
+        .backdrop-filter {
+            background-image: url('https://picsum.photos/seed/picsum/300/200');
+            background-position: center center;
+            background-size: cover;
+            height: 200px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .backdrop-filter .box {
+            background-color: rgba(255, 255, 255, 0.3);
+            /* Puede o no estar presente */
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px 40px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 80px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>COMPONENTES</h1>
+
+        <section class="text-overflow-ellipsis">
+            <h2>text-overflow</h2>
+            <p>Esto es una prueba de texto para recortar</p>
+            <p class="overflow-ellipsis">Esto es una prueba de texto para recortar</p>
+        </section>
+
+        <section class="">
+            <h2>backdrop-filter (experimental)</h2>
+            <div class="backdrop-filter">
+                <div class="box">
+                    <p>Texto con filtro</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
 </body>
+
 </html>
